@@ -1,6 +1,6 @@
 {
   "name": "@ccrc/app-core",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Core module",
   "author": "xxxhand <nohandboy@gmail.com>",
   "homepage": "",
@@ -21,6 +21,6 @@
     "test": "echo \"Error: run tests from root\" && exit 1"
   },
   "dependencies": {
-    "@ccrc/app-common": "^0.0.0"
+    "@ccrc/app-common": "^0.0.1"
   }
 }
