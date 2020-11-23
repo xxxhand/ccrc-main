@@ -1,9 +1,11 @@
 global.Promise = require('bluebird');
 const http = require('http');
 const { LOGGER, tools } = require('@ccrc/app-common');
+const AppInit = require('../bootstrap/app-initializer');
 const app = require('../bootstrap/app');
 
 LOGGER.info('Initial app start...');
+AppInit.loadConfig();
 
 const _core = http.createServer(app.callback());
 _core.listen(Number.parseInt(tools.customArgvs.port, 10));
