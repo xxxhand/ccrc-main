@@ -5,6 +5,7 @@ const argvs = require('./custom-argvs');
 const tracer = require('./custom-request-tracer');
 
 const _HOST_NAME = os.hostname().toLowerCase();
+const _CONSOLE_ENV = ['development', 'test'];
 
 const _tracerPrinter = format.printf((info) => {
   const id = tracer.getId();
@@ -23,7 +24,7 @@ const _dailyLog = new DailyRotate({
   format: _basicFormatter,
 });
 const _consoleLog = new transports.Console({
-  level: process.env.NODE_ENV === 'development' ? 'info' : 'error',
+  level: _CONSOLE_ENV.includes(process.env.NODE_ENV) ? 'info' : 'error',
   format: _basicFormatter,
 });
 const _defaultLogger = createLogger()
