@@ -3,4 +3,5 @@ module.exports = {
   customRequestTracer: require('./custom-request-tracer'),
   customLogger: require('./custom-logger'),
   CustomValidator: require('./custom-validator'),
+  CustomUtils: require('./custom-utils'),
 };
