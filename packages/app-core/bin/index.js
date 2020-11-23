@@ -1,3 +1,3 @@
-const { LOGGER } = require('@ccrc/app-common');
+const { LOGGER, models, codes } = require('@ccrc/app-common');
 
-LOGGER.info('Hello world');
+LOGGER.info(`Hello ${new models.CustomError(codes.errorCodes.SUCCESS).message}`);
