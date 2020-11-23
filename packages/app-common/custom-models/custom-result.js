@@ -44,6 +44,16 @@ class CustomResult {
 
   /**
    * @description Set error code
+   * @param {string} traceId traceId
+   * @returns {CustomResult} CustomResult
+   */
+  withTraceId(traceId) {
+    this.traceId = traceId;
+    return this;
+  }
+
+  /**
+   * @description Set error code
    * @param {number} code code
    * @returns {CustomResult} CustomResult
    */

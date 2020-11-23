@@ -60,10 +60,10 @@ const _koaMiddleware = ({
   }
   requestId = requestId || uuid.v4();
 
-  return new Promise((res, rej) => {
+  return new Promise(_nameSpace.bind((res, rej) => {
     _nameSpace.set('requestId', requestId);
     return next().then(res).catch(rej);
-  });
+  }));
 };
 /**
  * @ignore
