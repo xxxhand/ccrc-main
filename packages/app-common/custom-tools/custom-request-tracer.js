@@ -13,6 +13,7 @@ const _nameSpaceId = `tracer:${uuid.v4()}`;
 const _nameSpace = cls.createNamespace(_nameSpaceId);
 
 /**
+ * @ignore
  * @description Middleware to provide express
  * @function
  * @param {Object} options
@@ -38,6 +39,7 @@ const _expressMiddleware = ({
   });
 };
 /**
+ * @ignore
  * @description Middleware to provide to koa
  * @function
  * @param {Object} options
@@ -64,6 +66,7 @@ const _koaMiddleware = ({
   });
 };
 /**
+ * @ignore
  * @description Get tracer id
  * @function
  * @returns {string} An unique id of each request

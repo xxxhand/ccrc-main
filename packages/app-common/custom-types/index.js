@@ -1,4 +1,5 @@
 /**
+ * @ignore
  * @typedef errorCodeObject
  * @property {string} alias
  * @property {number} code

@@ -5,6 +5,7 @@
     "packages/*"
   ],
   "scripts": {
+    "doc": "npx jsdoc -c .jsdocrc.json",
     "start": "npx lerna run start --stream",
     "clean": "npx lerna run --parallel clean",
     "lint": "node ./node_modules/.bin/eslint packages/**/*.js",
@@ -13,12 +14,15 @@
   },
   "pre-commit": [
     "lint",
-    "test"
+    "test",
+    "doc"
   ],
   "devDependencies": {
     "@types/jest": "26.0.15",
+    "@types/supertest": "^2.0.10",
     "babel-eslint": "10.1.0",
     "cross-env": "7.0.2",
+    "docdash": "^1.2.0",
     "eslint": "7.10.0",
     "eslint-config-airbnb": "18.2.1",
     "eslint-plugin-import": "2.22.1",
@@ -28,8 +32,10 @@
     "jest-html-reporters": "2.1.0",
     "jest-junit": "11.1.0",
     "jest-sonar-reporter": "2.0.0",
+    "jsdoc": "^3.6.6",
     "lerna": "3.22.1",
     "npm-run-all": "4.1.5",
-    "pre-commit": "^1.2.2"
+    "pre-commit": "^1.2.2",
+    "supertest": "^6.0.1"
   }
 }
