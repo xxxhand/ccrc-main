@@ -1,4 +1,4 @@
-const { LOGGER, models, codes, tools } = require('@ccrc/app-common');
+const { LOGGER, models, tools } = require('@ccrc/app-common');
 
 /**
  * @class

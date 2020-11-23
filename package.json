@@ -8,7 +8,7 @@
     "doc": "npx jsdoc -c .jsdocrc.json",
     "start": "npx lerna run start --stream",
     "clean": "npx lerna run --parallel clean",
-    "lint": "node ./node_modules/.bin/eslint packages/**/*.js",
+    "lint": "node ./node_modules/eslint/bin/eslint.js packages/**/*.js",
     "test:local": "yarn test --envir=development",
     "test": "cross-env NODE_ENV=$npm_config_envir node --max_old_space_size=4096 ./node_modules/jest/bin/jest.js --config=.jestrc.json --runInBand --logHeapUsage --detectOpenHandles --forceExit"
   },
