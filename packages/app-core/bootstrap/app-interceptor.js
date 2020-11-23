@@ -66,6 +66,7 @@ class AppInterceptor {
       return next();
     }
     LOGGER.info(`${ctx.method} ${ctx.originalUrl} - 200`);
+    ctx.state.result.traceId = tools.customRequestTracer.getId();
     ctx.status = 200;
     ctx.body = ctx.state.result;
   }
