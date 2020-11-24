@@ -5,7 +5,7 @@ const serve = require('koa-static');
 const mount = require('koa-mount');
 const { tools } = require('@ccrc/app-common');
 const AppInterceptor = require('./app-interceptor');
-const apiV1Router = require('./v1-routes');
+const apiV1Router = require('./api-v1-router');
 
 const _bodyOptions = {
   jsonLimit: '10mb',

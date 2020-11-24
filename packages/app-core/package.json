@@ -14,19 +14,11 @@
     "access": "public"
   },
   "scripts": {
-    "start": "node bin/index.js --env development",
     "test": "echo \"Error: run tests from root\" && exit 1"
   },
   "dependencies": {
     "@ccrc/app-common": "^0.0.2",
-    "@koa/multer": "^3.0.0",
     "@koa/router": "^10.0.0",
-    "bluebird": "^3.7.2",
-    "fs-extra": "^9.0.1",
-    "koa": "^2.13.0",
-    "koa-body": "^4.2.0",
-    "koa-mount": "^4.0.0",
-    "koa-static": "^5.0.0",
-    "multer": "^1.4.2"
+    "fs-extra": "^9.0.1"
   }
 }

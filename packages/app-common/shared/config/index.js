@@ -1,4 +1,4 @@
-const fs = require('fs');
+const fs = require('fs-extra');
 const { customLogger, CustomValidator } = require('../../custom-tools');
 /**
  * @type {configObject}

@@ -1,11 +1,9 @@
 const request = require('supertest');
 const { models, codes } = require('@ccrc/app-common');
-const AppInit = require('../bootstrap/app-initializer');
-const app = require('../bootstrap/app');
+const app = require('../app');
 
 describe(`Root spec`, () => {
   const agent = request.agent(app.callback());
-  AppInit.loadConfig();
   test(`Hello world`, async (done) => {
     const res = await agent
       .get('/api/v1');
