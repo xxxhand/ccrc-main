@@ -1,1 +1,4 @@
-module.exports = require('./app');
+module.exports = {
+  App: require('./app'),
+  AppInit: require('./app-initializer'),
+};
