@@ -38,8 +38,8 @@
     "supertest": "^6.0.1"
   },
   "dependencies": {
-    "@ccrc/app-common": "0.0.2",
-    "@ccrc/backend": "0.0.2",
+    "@ccrc/app-common": "^0.0.3",
+    "@ccrc/backend": "^0.0.3",
     "bluebird": "^3.7.2"
   }
 }
