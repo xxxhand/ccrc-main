@@ -6,7 +6,7 @@
   ],
   "scripts": {
     "doc": "npx jsdoc -c .jsdocrc.json",
-    "start": "npx lerna run start --stream",
+    "start:local": "node bin/www.js --env development",
     "clean": "npx lerna run --parallel clean",
     "lint": "node ./node_modules/eslint/bin/eslint.js packages/**/*.js",
     "test:local": "yarn test --envir=development",

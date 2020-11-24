@@ -1,34 +1,26 @@
-const fs = require('fs-extra');
-const { customLogger, CustomValidator } = require('../../custom-tools');
+const fs = require('fs');
+const path = require('path');
+const { customLogger, CustomValidator, customArgvs } = require('../../custom-tools');
 /**
  * @type {configObject}
  */
 let _config = null;
 
-/**
- * @private
- * @description Load configs from input file
- * @param {string} filePath
- * @returns {void} void
- * @throws {Error} error
- */
-function _load(filePath) {
-  if (!CustomValidator.nonEmptyString(filePath)) {
-    customLogger.info('Input path is empty, terminated...');
-    throw new Error('Path is empty');
-  }
-  if (filePath.startsWith('.') || filePath.startsWith('..')) {
-    throw new Error('Path must be absolutely');
-  }
-  customLogger.info(`Check file exist with path ${filePath}...`);
-  if (!fs.existsSync(filePath)) {
-    throw new Error(`File not exist with path ${filePath}`);
-  }
-  const data = fs.readFileSync(filePath);
-  _config = JSON.parse(data);
+customLogger.info(`Run on environment ${customArgvs.env}`);
+customLogger.info('Load config start...');
+let _configPath = customArgvs.configpath;
+if (!CustomValidator.nonEmptyString(_configPath)) {
+  customLogger.info('Input argv is empty, load from default...');
+  _configPath = path.resolve(require.main.path, `../configs/config.${customArgvs.env}.json`);
 }
+if (_configPath.startsWith('.') || _configPath.startsWith('..')) {
+  throw new Error('Path must be absolutely');
+}
+customLogger.info(`Check file exist with path ${_configPath}...`);
+if (!fs.existsSync(_configPath)) {
+  throw new Error(`File not exist with path ${_configPath}`);
+}
+const data = fs.readFileSync(_configPath);
+_config = JSON.parse(data);
 
-module.exports = {
-  conf: _config,
-  load: _load,
-};
+module.exports = _config;
